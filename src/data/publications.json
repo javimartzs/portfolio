@@ -1,0 +1,133 @@
+[
+    {
+      "type": "Policy Brief",
+      "title": "El mercado de alquiler en España: alquiler vacacional, de temporada y largo plazo ante la regulación",
+      "description": "",
+      "image": "/images/gr1_stoc_alquiler.png",
+      "link": "https://www.esade.edu/ecpol/es/publicaciones/el-mercado-de-alquiler-en-espana-alquiler-vacacional-de-temporada-y-largo-plazo-ante-la-regulacion/",
+      "date": "2024-11-21"
+    },
+    {
+      "type": "Policy Brief",
+      "title": "Evolución de los Fondos NextGen EU en España",
+      "description": "",
+      "image": "/images/gr1_evolucion.png",
+      "link": "https://www.esade.edu/ecpol/es/publicaciones/evolucion-de-los-fondos-next-gen-eu-en-espana/",
+      "date": "2024-02-29"
+    },
+    {
+        "type": "Policy Brief",
+        "title": "¿Logró la subvención al transporte público metropolitano sacar coches de las ciudades?",
+        "description": "",
+        "image": "",
+        "link": "https://www.esade.edu/ecpol/es/publicaciones/logro-la-subvencion-al-transporte-publico-metropolitano-sacar-coches-de-las-ciudades-un-analisis-con-datos-de-trafico-en-tiempo-real-de-la-ciudad-de-madrid/",
+        "date": "2023-10-18"
+    },
+    {
+        "type": "Policy Brief",
+        "title": "Lo que servirá y lo que no de la nueva política de vivienda para mejorar el acceso al alquiler",
+        "description": "",
+        "image": "",
+        "link": "https://www.esade.edu/ecpol/es/publicaciones/lo-que-servira-y-lo-que-no-de-la-nueva-politica-de-vivienda-para-mejorar-el-acceso-al-alquiler/",
+        "date": "2023-05-03"
+    },
+    {
+        "type": "Policy Brief",
+        "title": "La reducción del IVA en los alimentos básicos: evaluación y recomendaciones",
+        "description": "",
+        "image": "",
+        "link": "https://www.esade.edu/ecpol/es/publicaciones/la-reduccion-del-iva-en-los-alimentos-basicos-evaluacion-y-recomendaciones/",
+        "date": "2023-03-30"
+    },
+    {
+        "type": "Policy Brief",
+        "title": "Los efectos del aumento del IVA en el consumo de las bebidas azucaradas en España",
+        "description": "",
+        "image": "",
+        "link": "https://www.esade.edu/ecpol/es/publicaciones/los-efectos-del-aumento-del-iva-en-el-consumo-de-las-bebidas-azucaradas-en-espana/",
+        "date": "2022-11-29"
+    },
+    {
+        "type": "Policy Brief",
+        "title": "Cómo fue la inflación en 2023 para los hogares pobres y ricos en España",
+        "description": "",
+        "image": "",
+        "link": "https://www.esade.edu/ecpol/es/blog/como-fue-la-inflacion-en-2023-para-los-hogares-pobres-y-ricos-en-espana/",
+        "date": "2024-01-09"
+    },
+    {
+        "type": "Policy Brief",
+        "title": "Las desigualdades en el impacto de la inflación en 2022, compensadas por la electricidad",
+        "description": "",
+        "image": "",
+        "link": "https://www.esade.edu/ecpol/es/blog/las-desigualdades-en-el-impacto-de-la-inflacion-en-2022-compensadas-por-la-electricidad/",
+        "date": "2023-01-13"
+    },
+    {
+        "type": "Written in media",
+        "title": "El verdadero coste de no adaptar nuestro sistema de pensiones",
+        "description": "Podría parecer que, al ser este un asunto técnico, estaría exento de cuestiones ideológicas, pero como veremos esto dista mucho de la realidad.",
+        "image": "/images/coste-pensiones.jpg",
+        "link": "https://blogs.elconfidencial.com/economia/tribuna/2023-07-06/verdadero-coste-no-adaptar-sistema-pensiones_3690399/",
+        "date": "2023-07-06"
+    },
+    {
+        "type": "Written in media",
+        "title": "Dejemos de agujerear el IVA",
+        "description": "El IVA es un impuesto con un enorme potencial recaudatorio, fundamental para cimentar nuestras cuentas públicas.",
+        "image": "/images/iva-confi.jpg",
+        "link": "https://blogs.elconfidencial.com/mercados/tribuna-mercados/2023-07-12/dejemos-de-agujerear-el-iva_3698502/",
+        "date": "2023-07-17"
+    },
+    {
+        "type": "Written in media",
+        "title": "Lo bueno, lo (aparentemente) feo y lo malo de los datos de la EPA",
+        "description": "Cada nueva EPA es un test para nuestro mercado de trabajo, y lo es aún más después de una pandemia, una significativa reforma de hecho.",
+        "image": "/images/epa-confi.jpg",
+        "link": "https://blogs.elconfidencial.com/mercados/tribuna-mercados/2023-10-27/lo-bueno-lo-aparentemente-feo-y-lo-malo_3762559/",
+        "date": "2023-10-27"
+    }, 
+    {
+        "type": "Written in media", 
+        "title": "No demos por perdida la batalla de las políticas activas de empleo", 
+        "description": "Prestaciones y subsidios deberían diseñarse para sustituir rentas perdidas sin generar desincentivos en la búsqueda de un nuevo empleo.",
+        "image": "/images/empleo-cincod.avif",
+        "link": "https://cincodias.elpais.com/economia/2023-12-21/no-demos-por-perdida-la-batalla-de-las-politicas-activas-de-empleo.html",
+        "date": "2023-12-21"
+    }, 
+    {
+        "type": "Written in media", 
+        "title": "Cuidados para vivir mejor, y no sólo más años",
+        "description": "Las estimaciones apuntan a que, en 2072, la mitad de la población tendrá más de 64 años. Por ello, tenemos que priorizar lo que se ha venido considerando como la hermana pobre de nuestro sistema de protección social.",
+        "image": "/images/vivir-mejor.webp",
+        "link": "https://www.eldiario.es/opinion/tribuna-abierta/cuidados-vivir-mejor-no-anos_129_10359950.html",
+        "date": "2023-07-07"
+    }, 
+    {
+        "type": "Web development", 
+        "title": "NextGenEU Tracker | Nov-24", 
+        "description": "",
+        "image": "/images/fondos-app.png",
+        "link": "https://www.esade.edu/ecpol/es/nextgeneu-tracker/",
+        "date": "2024-12-01"
+    },
+    {
+        "type": "Web development", 
+        "title": "Aplicacion web de gestion de recursos humanos", 
+        "description": "",
+        "image": "/images/human-resources.png",
+        "link": "",
+        "date": "2024-12-01"
+
+    }, 
+    {
+        "type" : "Web development", 
+        "title": "Weather App with Go",
+        "description": "",
+        "image": "/images/weatherapp.png",
+        "link": "",
+        "date": "2024-12-01"
+
+    }
+  ]
+  

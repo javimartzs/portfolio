@@ -1,0 +1,117 @@
+---
+import Layout from "../layouts/Layout.astro";
+import publications from '../data/publications.json';
+
+interface Publication {
+    type: string;
+    title: string;
+    description: string;
+    image: string; 
+    link: string; 
+    date: string;
+}
+
+const sortedPublications = [...publications].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const publicationTypes = ['All', ...new Set(publications.map((pub: Publication) => pub.type))];
+---
+
+<Layout>
+    <section class="p-4 sm:p-6 md:p-8 max-w-[100vw] overflow-x-hidden min-h-screen">
+        <!--Filter buttons-->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
+            {publicationTypes.map(type => (
+              <button
+                class:list={[
+                  "filter-btn px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium transition-colors text-sm sm:text-base",
+                  " hover:text-white hover:bg-slate-100",
+                  "data-[active=true]:bg-blue-700 data-[active=true]:text-white",
+                  "data-[active=false]:bg-gray-200 data-[active=false]:text-gray-700 hover:bg-blue-700 hover:text-white"
+                ]}
+                data-type={type}
+                data-active={type === 'All'}
+              >
+                {type}
+              </button>
+            ))}
+          </div>
+
+          <!--Publications grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols2 gap-4 sm:gap-6 w-11/12 sm:w-4/6 mx-auto">
+            {sortedPublications.map((pub) => (
+              <article 
+                class="publication-card bg-white rounded-lg shadow-md overflow-hidden" 
+                data-type={pub.type}
+              >
+                <img
+                  src={pub.image}
+                  alt={pub.title}
+                  class="w-full h-40 sm:h-50 object-cover"
+                />
+                <div class="p-3 sm:p-4">
+                  <span class="text-xs sm:text-sm font-medium text-blue-600">{pub.type}</span>
+                  <h2 class="text-lg sm:text-xl font-bold mt-1 mb-2 line-clamp-2">{pub.title}</h2>
+                  <p class="text-sm sm:text-base text-gray-600 mb-4 line-clamp-3">{pub.description}</p>
+                  <div class="flex justify-between items-center">
+                    <a
+                      href={pub.link}
+                      class="text-sm sm:text-base text-blue-600 font-semibold hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Read More →
+                    </a>
+                    <time class="text-xs sm:text-sm text-gray-500">{new Date(pub.date).toLocaleDateString()}</time>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+    </section>
+</Layout>
+
+<script>
+    // Function to initialize filters
+    function initializeFilters() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const publications = document.querySelectorAll('.publication-card');
+  
+      function updateFilter(selectedType: string) {
+        // Update buttons state
+        filterButtons.forEach(btn => {
+          const isActive = btn.getAttribute('data-type') === selectedType;
+          btn.setAttribute('data-active', isActive.toString());
+        });
+  
+        // Update publications visibility
+        publications.forEach(pub => {
+          const pubType = pub.getAttribute('data-type');
+          if (selectedType === 'All') {
+            // For 'All' filter, show everything except 'Web development'
+            if (pubType === 'Web development') {
+              pub.classList.add('hidden');
+            } else {
+              pub.classList.remove('hidden');
+            }
+          } else if (pubType === selectedType) {
+            pub.classList.remove('hidden');
+          } else {
+            pub.classList.add('hidden');
+          }
+        });
+      }
+  
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const type = btn.getAttribute('data-type') || 'All';
+          updateFilter(type);
+        });
+      });
+
+      // Initialize with 'All' filter
+      updateFilter('All');
+    }
+  
+    // Initialize filters immediately and after view transitions
+    initializeFilters();
+    document.addEventListener('astro:page-load', initializeFilters);
+  </script>

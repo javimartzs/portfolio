@@ -1,3 +1,11 @@
+---
+// Supports weights 100-900
+import '@fontsource-variable/onest';
+import Header from '../components/Header.astro';
+import { ClientRouter } from 'astro:transitions';
+import Footer from '../components/Footer.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,17 +14,68 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+        <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+		<ClientRouter />
 	</head>
-	<body>
+	<body class="bg-slate-300">
+        <!-- Contenedor de partículas -->
+        <div id="particles-js"></div>
+
+        <Header />
 		<slot />
+        <Footer/>
 	</body>
 </html>
+
+<script is:inline>
+    function initParticles() {
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 80,
+                    density: { enable: true, value_area: 800 },
+                },
+                color: { value: "#5c5a5a" }, // Gris claro para nubes
+                shape: { type: "circle" },
+                opacity: { value: 0.7 },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#5c5a5a",
+                    opacity: 0.4,
+                    width: 1,
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    out_mode: "out",
+                },
+            },
+            retina_detect: true,
+        });
+    }
+
+    // Inicializar las partículas cuando se carga la página
+    document.addEventListener("DOMContentLoaded", initParticles);
+
+    // Reinicializar las partículas cuando se navega entre páginas
+    document.addEventListener("astro:page-load", initParticles);
+</script>
 
 <style>
 	html,
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+        font-family: 'Onest Variable', sans-serif;
 	}
+    #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 </style>

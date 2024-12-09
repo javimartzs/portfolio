@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import publications from '../data/publications.json';
+
+interface Publication {
+  type: string;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  date: string;
+}
+
+const publicationTypes = ['All', ...new Set(publications.map((pub: Publication) => pub.type))];
+---
+
+<Layout>
+  <section class="p-8 bg-gray-100">
+    <h1 class="text-4xl font-bold mb-6 text-center">Publications</h1>
+
+    <div class="flex justify-center gap-4 mb-8">
+      {publicationTypes.map(type => (
+        <button
+          class:list={[
+            "filter-btn px-4 py-2 rounded-lg font-medium transition-colors",
+            "hover:bg-blue-600 hover:text-white",
+            "data-[active=true]:bg-blue-600 data-[active=true]:text-white",
+            "data-[active=false]:bg-gray-200 data-[active=false]:text-gray-700"
+          ]}
+          data-type={type}
+          data-active={type === 'All'}
+        >
+          {type}
+        </button>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {publications.map((pub) => (
+        <article 
+          class="publication-card bg-white rounded-lg shadow-md overflow-hidden" 
+          data-type={pub.type}
+        >
+          <img
+            src={pub.image}
+            alt={pub.title}
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <span class="text-sm font-medium text-blue-600">{pub.type}</span>
+            <h2 class="text-xl font-bold mt-1 mb-2">{pub.title}</h2>
+            <p class="text-gray-600 mb-4">{pub.description}</p>
+            <div class="flex justify-between items-center">
+              <a
+                href={pub.link}
+                class="text-blue-600 font-semibold hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read More →
+              </a>
+              <time class="text-sm text-gray-500">{new Date(pub.date).toLocaleDateString()}</time>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function initializeFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const publications = document.querySelectorAll('.publication-card');
+
+    function updateFilter(selectedType: string) {
+      // Update buttons state
+      filterButtons.forEach(btn => {
+        const isActive = btn.getAttribute('data-type') === selectedType;
+        btn.setAttribute('data-active', isActive.toString());
+      });
+
+      // Update publications visibility
+      publications.forEach(pub => {
+        const pubType = pub.getAttribute('data-type');
+        if (selectedType === 'All' || pubType === selectedType) {
+          pub.classList.remove('hidden');
+        } else {
+          pub.classList.add('hidden');
+        }
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = btn.getAttribute('data-type') || 'All';
+        updateFilter(type);
+      });
+    });
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', initializeFilters);
+</script>
